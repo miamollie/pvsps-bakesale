@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PVSPS Bake Sale Ideas</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background: #f7faff;
+        color: #333;
+      }
+      header {
+        text-align: center;
+        padding: 2rem 1rem 1rem;
+        background: #eaf4ff;
+        border-bottom: 4px solid #b3d4fc;
+      }
+      header h1 {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+        color: #2a5d9f;
+      }
+      header p {
+        max-width: 600px;
+        margin: 0 auto;
+        color: #444;
+        font-size: 1.05rem;
+      }
+      .grid {
+        display: grid;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+      .card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+      }
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+      .card-content {
+        padding: 1rem;
+        flex-grow: 1;
+      }
+      .card h2 {
+        margin: 0 0 0.5rem;
+        font-size: 1.25rem;
+        color: #2a5d9f;
+      }
+      .pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+      .pill {
+        border-radius: 999px;
+        padding: 0.3rem 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #fff;
+        background: #4a90e2;
+      }
+      .pill.alt {
+        background: #5dade2;
+      }
+      dialog {
+        border: none;
+        border-radius: 16px;
+        padding: 1.5rem;
+        max-width: 500px;
+        width: 90%;
+        background: #fff;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      }
+      dialog::backdrop {
+        background: rgba(0, 0, 0, 0.4);
+      }
+      dialog img {
+        max-width: 100%;
+        border-radius: 12px;
+        margin-bottom: 1rem;
+      }
+      dialog h2 {
+        margin-top: 0;
+        color: #2a5d9f;
+      }
+      .ingredients {
+        margin: 1rem 0;
+        background: #f0f7ff;
+        padding: 0.75rem;
+        border-radius: 8px;
+        font-size: 0.95rem;
+      }
+      .close-btn {
+        margin-top: 1rem;
+        background: #4a90e2;
+        color: #fff;
+        border: none;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+      .close-btn:hover {
+        background: #357ab8;
+      }
+      a {
+        color: #2a5d9f;
+        font-weight: 500;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>PVSPS Bake Sale Ideas</h1>
+      <p>
+        Any and every recipe is welcome! But since parents are often time poor,
+        we’ve put together some tried and tested ideas for our bake sales.
+      </p>
+    </header>
+
+    <main class="grid">
+      <!-- Recipe Tile -->
+      <div class="card" data-dialog="recipe1">
+        <div class="card-content">
+          <h2>Hedgehog Slice</h2>
+          <div class="pills">
+            <span class="pill">No Bake</span>
+            <span class="pill alt">Easy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-dialog="recipe1">
+        <div class="card-content">
+          <h2>Lemon Slice</h2>
+          <div class="pills">
+            <span class="pill">No Bake</span>
+            <span class="pill alt">Easy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-dialog="recipe1">
+        <div class="card-content">
+          <h2>Jelly cup/Frog in pond</h2>
+          <div class="pills">
+            <span class="pill">No Bake</span>
+            <span class="pill alt">Easy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-dialog="recipe1">
+        <div class="card-content">
+          <h2>Lolly bags</h2>
+          <div class="pills">
+            <span class="pill">Make ahead</span>
+            <span class="pill alt">No Bake</span>
+            <span class="pill alt">Easy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-dialog="recipe1">
+        <div class="card-content">
+          <h2>Cookie mix jars</h2>
+          <div class="pills">
+            <span class="pill">Make ahead</span>
+            <span class="pill alt">No Bake</span>
+            <span class="pill alt">Easy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-dialog="recipe1">
+        <div class="card-content">
+          <h2>Oatmeal chocolate chunk cookies</h2>
+          <div class="pills"></div>
+        </div>
+      </div>
+
+      <div class="card" data-dialog="recipe1">
+        <div class="card-content">
+          <h2>Blondies</h2>
+          <div class="pills"></div>
+        </div>
+      </div>
+
+      <div class="card" data-dialog="recipe1">
+        <div class="card-content">
+          <h2>Brownies</h2>
+          <div class="pills"></div>
+        </div>
+      </div>
+
+      <div class="card" data-dialog="recipe1">
+        <div class="card-content">
+          <h2>Banana bread – whole cake</h2>
+          <div class="pills"></div>
+        </div>
+      </div>
+
+      <div class="card" data-dialog="recipe1">
+        <div class="card-content">
+          <h2>Malteaser Slice</h2>
+          <div class="pills">
+            <span class="pill">No Bake</span>
+            <span class="pill alt">Easy</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Dialogs -->
+    <dialog id="recipe1">
+      <h2>Chocolate Slice</h2>
+      <p class="ingredients">
+        <strong>Ingredients:</strong><br />
+        - 200g plain biscuits<br />
+        - 125g butter<br />
+        - 1/2 cup cocoa<br />
+        - 1 cup icing sugar
+      </p>
+      <p>
+        <a href="https://example.com/chocolate-slice" target="_blank"
+          >View full recipe</a
+        >
+      </p>
+      <button class="close-btn">Close</button>
+    </dialog>
+
+    <script>
+      document.querySelectorAll(".card").forEach((card) => {
+        card.addEventListener("click", () => {
+          const dialogId = card.getAttribute("data-dialog");
+          document.getElementById(dialogId).showModal();
+        });
+      });
+
+      document.querySelectorAll(".close-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.target.closest("dialog").close();
+        });
+      });
+    </script>
+  </body>
+</html>
