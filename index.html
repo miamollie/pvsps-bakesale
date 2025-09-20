@@ -5,29 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PVSPS Bake Sale Ideas</title>
     <style>
+      :root {
+        --font-family: system-ui, sans-serif;
+        --color-text: #333;
+        --color-text-muted: #444;
+        --color-bg: #f7faff;
+        --color-bg-header: #eaf4ff;
+        --color-border-header: #b3d4fc;
+        --color-primary: #2a5d9f;
+        --color-pill: #4a90e2;
+        --color-pill-alt: #5dade2;
+        --color-pill-ghost-bg: #fff;
+        --color-pill-ghost-border: #5dade2;
+        --color-btn-bg: #4a90e2;
+        --color-btn-bg-hover: #357ab8;
+        --color-dialog-bg: #fff;
+        --color-dialog-backdrop: rgba(0, 0, 0, 0.4);
+        --color-card-bg: #fff;
+        --color-ingredients-bg: #f0f7ff;
+        --shadow-card: 0 3px 8px rgba(0, 0, 0, 0.1);
+        --shadow-card-hover: 0 6px 14px rgba(0, 0, 0, 0.15);
+        --shadow-dialog: 0 6px 20px rgba(0, 0, 0, 0.25);
+      }
+
       body {
-        font-family: system-ui, sans-serif;
+        font-family: var(--font-family);
         margin: 0;
         padding: 0;
         line-height: 1.6;
-        background: #f7faff;
-        color: #333;
+        background: var(--color-bg);
+        color: var(--color-text);
+        display: flex-column;
+        justify-content: space-between;
       }
+
       header {
         text-align: center;
         padding: 2rem 1rem 1rem;
-        background: #eaf4ff;
-        border-bottom: 4px solid #b3d4fc;
+        background: var(--color-bg-header);
+        border-bottom: 4px solid var(--color-border-header);
       }
       header h1 {
         font-size: 2.2rem;
         margin-bottom: 0.5rem;
-        color: #2a5d9f;
+        color: var(--color-primary);
       }
-      header p {
-        max-width: 600px;
-        margin: 0 auto;
-        color: #444;
+      header p,
+      footer p {
+        max-width: 800px;
+        margin: 0 auto 15px auto;
+        color: var(--color-text-muted);
         font-size: 1.05rem;
       }
       .grid {
@@ -37,9 +64,9 @@
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       }
       .card {
-        background: #fff;
+        background: var(--color-card-bg);
         border-radius: 16px;
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: var(--shadow-card);
         cursor: pointer;
         transition: transform 0.2s, box-shadow 0.2s;
         overflow: hidden;
@@ -48,7 +75,7 @@
       }
       .card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+        box-shadow: var(--shadow-card-hover);
       }
       .card img {
         width: 100%;
@@ -62,7 +89,7 @@
       .card h2 {
         margin: 0 0 0.5rem;
         font-size: 1.25rem;
-        color: #2a5d9f;
+        color: var(--color-primary);
       }
       .pills {
         display: flex;
@@ -75,10 +102,18 @@
         font-size: 0.75rem;
         font-weight: 500;
         color: #fff;
-        background: #4a90e2;
+        background: var(--color-pill);
       }
       .pill.alt {
-        background: #5dade2;
+        background: var(--color-pill-alt);
+      }
+      .pill.ghost {
+        background: var(--color-pill-ghost-bg);
+        border: 3px solid var(--color-pill-ghost-border);
+      }
+      .pill.dialog a {
+        display: block;
+        text-align: center;
       }
       dialog {
         border: none;
@@ -86,31 +121,36 @@
         padding: 1.5rem;
         max-width: 500px;
         width: 90%;
-        background: #fff;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        background: var(--color-dialog-bg);
+        box-shadow: var(--shadow-dialog);
       }
       dialog::backdrop {
-        background: rgba(0, 0, 0, 0.4);
+        background: var(--color-dialog-backdrop);
       }
       dialog img {
         max-width: 100%;
         border-radius: 12px;
         margin-bottom: 1rem;
       }
+      dialog header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
       dialog h2 {
         margin-top: 0;
-        color: #2a5d9f;
+        color: var(--color-primary);
       }
       .ingredients {
         margin: 1rem 0;
-        background: #f0f7ff;
+        background: var(--color-ingredients-bg);
         padding: 0.75rem;
         border-radius: 8px;
         font-size: 0.95rem;
       }
       .close-btn {
         margin-top: 1rem;
-        background: #4a90e2;
+        background: var(--color-btn-bg);
         color: #fff;
         border: none;
         padding: 0.6rem 1.2rem;
@@ -120,10 +160,10 @@
         font-weight: 500;
       }
       .close-btn:hover {
-        background: #357ab8;
+        background: var(--color-btn-bg-hover);
       }
       a {
-        color: #2a5d9f;
+        color: var(--color-primary);
         font-weight: 500;
         text-decoration: none;
       }
@@ -132,17 +172,25 @@
       }
     </style>
   </head>
+
   <body>
     <header>
       <h1>PVSPS Bake Sale Ideas</h1>
       <p>
-        Any and every recipe is welcome! But since parents are often time poor,
-        we’ve put together some tried and tested ideas for our bake sales.
+        Thanks for joining our bake sale! We can’t wait to taste all your
+        favourite treats — from Nonna’s timeless classics to Dad’s latest
+        experiments, every recipe is welcome.
       </p>
+      <p>
+        We know parents and carers are often short on time, so we’ve gathered a
+        collection of tried-and-tested ideas that are always a hit. Each one
+        comes with a simple recipe you can count on. Just click a tile for a
+        quick overview, then follow the link to dive into the full recipe.
+      </p>
+      <p>Happy baking! 🎉</p>
     </header>
 
     <main class="grid">
-      <!-- Recipe Tile -->
       <div class="card" data-dialog="recipe1">
         <div class="card-content">
           <h2>Hedgehog Slice</h2>
@@ -152,8 +200,40 @@
           </div>
         </div>
       </div>
+      <dialog id="recipe1">
+        <header>
+          <h2>Hedgehog Slice</h2>
+          <button class="close-btn">Close</button>
+        </header>
+        <div>
+          <div class="ingredients">
+            <strong>Ingredients:</strong><br />
+            <ul>
+              <li>200g plain biscuits</li>
+              <li>200g plain biscuits</li>
+              <li>200g plain biscuits</li>
+              <li>200g plain biscuits</li>
+            </ul>
+          </div>
 
-      <div class="card" data-dialog="recipe1">
+          <div>
+            <strong>Method:</strong><br />
+            <ol>
+              <li>Squash biscuits</li>
+              <li>Squash biscuits</li>
+              <li>Squash biscuits</li>
+            </ol>
+          </div>
+        </div>
+
+        <p class="pill ghost dialog">
+          <a href="https://example.com/chocolate-slice" target="_blank"
+            >View full recipe</a
+          >
+        </p>
+      </dialog>
+
+      <div class="card" data-dialog="recipe2">
         <div class="card-content">
           <h2>Lemon Slice</h2>
           <div class="pills">
@@ -163,7 +243,7 @@
         </div>
       </div>
 
-      <div class="card" data-dialog="recipe1">
+      <div class="card" data-dialog="recipe2">
         <div class="card-content">
           <h2>Jelly cup/Frog in pond</h2>
           <div class="pills">
@@ -172,6 +252,59 @@
           </div>
         </div>
       </div>
+      <!-- Card -->
+      <div class="card" data-dialog="recipe-honeyjoys">
+        <img
+          src="https://images.kglobalservices.com/www.kelloggs.com.au/en_au/recipe/recipe_417863/hero_img-6631916_recipes_cf_honey_joys_header.jpg"
+          alt="Honey Joys"
+        />
+        <div class="card-content">
+          <h2>Honey Joys</h2>
+          <div class="pills">
+            <span class="pill alt">Easy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dialog -->
+      <dialog id="recipe-honeyjoys">
+        <header>
+          <h2>Honey Joys</h2>
+          <button class="close-btn" onclick="this.closest('dialog').close()">
+            Close
+          </button>
+        </header>
+        <img
+          src="https://images.kglobalservices.com/www.kelloggs.com.au/en_au/recipe/recipe_417863/hero_img-6631916_recipes_cf_honey_joys_header.jpg"
+          alt="Honey Joys"
+        />
+        <p>
+          These classic, crunchy, buttery treats are a staple at Aussie bake
+          sales!
+        </p>
+        <div class="ingredients">
+          <strong>Ingredients:</strong>
+          <ul>
+            <li>90g Kellogg’s® Corn Flakes</li>
+            <li>1/3 cup sugar</li>
+            <li>1 tbsp honey</li>
+            <li>90g butter</li>
+          </ul>
+        </div>
+        <p>
+          <strong>Method:</strong> Melt butter, sugar and honey together until
+          frothy. Mix with Corn Flakes, spoon into cases, and bake at 150°C for
+          10 minutes.
+        </p>
+        <p>
+          Full recipe at
+          <a
+            href="https://www.kelloggs.com.au/en_AU/recipes/honey-joys.html"
+            target="_blank"
+            >Kellogg’s</a
+          >.
+        </p>
+      </dialog>
 
       <div class="card" data-dialog="recipe1">
         <div class="card-content">
@@ -195,31 +328,222 @@
         </div>
       </div>
 
+      <!-- Rum Balls -->
       <div class="card" data-dialog="recipe1">
         <div class="card-content">
-          <h2>Oatmeal chocolate chunk cookies</h2>
-          <div class="pills"></div>
+          <h2>Rum Balls</h2>
+          <div class="pills">
+            <span class="pill">No Bake</span>
+            <span class="pill alt">Easy</span>
+          </div>
         </div>
       </div>
 
-      <div class="card" data-dialog="recipe1">
+      <dialog id="recipe1">
+        <header>
+          <h2>Rum Balls</h2>
+          <button class="close-btn">Close</button>
+        </header>
+        <div>
+          <div class="ingredients">
+            <strong>Ingredients:</strong><br />
+            <ul>
+              <li>Crushed biscuits</li>
+              <li>Cocoa powder</li>
+              <li>Sweetened condensed milk</li>
+              <li>Shredded coconut</li>
+              <li>Rum or rum essence</li>
+            </ul>
+          </div>
+
+          <div>
+            <strong>Method:</strong><br />
+            <ol>
+              <li>Crush biscuits into fine crumbs.</li>
+              <li>Mix with cocoa, condensed milk, and rum.</li>
+              <li>Shape into balls and roll in coconut.</li>
+              <li>Chill before serving.</li>
+            </ol>
+          </div>
+        </div>
+
+        <p class="pill ghost dialog">
+          <a
+            href="https://bakeplaysmile.com/super-easy-super-delicious-rum-balls/"
+            target="_blank"
+          >
+            View full recipe on Bake Play Smile
+          </a>
+        </p>
+      </dialog>
+
+      <!-- Oatmeal Chocolate Chunk Cookies -->
+      <div class="card" data-dialog="recipe2">
         <div class="card-content">
-          <h2>Blondies</h2>
-          <div class="pills"></div>
+          <h2>Oatmeal Chocolate Chunk Cookies</h2>
+          <div class="pills">
+            <span class="pill">Bake</span>
+            <span class="pill alt">Classic</span>
+          </div>
         </div>
       </div>
+
+      <dialog id="recipe2">
+        <header>
+          <h2>Oatmeal Chocolate Chunk Cookies</h2>
+          <button class="close-btn">Close</button>
+        </header>
+        <div>
+          <div class="ingredients">
+            <strong>Ingredients:</strong><br />
+            <ul>
+              <li>Rolled oats</li>
+              <li>Flour, baking soda, salt</li>
+              <li>Butter & sugar</li>
+              <li>Eggs & vanilla</li>
+              <li>Chocolate chunks</li>
+            </ul>
+          </div>
+
+          <div>
+            <strong>Method:</strong><br />
+            <ol>
+              <li>Cream butter and sugars until fluffy.</li>
+              <li>Add eggs and vanilla.</li>
+              <li>Stir in dry ingredients, oats, and chocolate.</li>
+              <li>Scoop dough, bake until golden edges form.</li>
+            </ol>
+          </div>
+        </div>
+
+        <p class="pill ghost dialog">
+          <a
+            href="https://mixedandmeasured.com/blog/oatmeal-chocolate-chunk-cookies"
+            target="_blank"
+          >
+            View full recipe on Mixed & Measured
+          </a>
+        </p>
+      </dialog>
+
+      <!-- Banana Bread -->
+      <div class="card" data-dialog="recipe3">
+        <div class="card-content">
+          <h2>Banana Bread</h2>
+          <div class="pills">
+            <span class="pill">Bake</span>
+            <span class="pill alt">Make Ahead</span>
+          </div>
+        </div>
+      </div>
+
+      <dialog id="recipe3">
+        <header>
+          <h2>Banana Bread</h2>
+          <button class="close-btn">Close</button>
+        </header>
+        <div>
+          <div class="ingredients">
+            <strong>Ingredients:</strong><br />
+            <ul>
+              <li>Ripe bananas</li>
+              <li>Flour, baking soda, salt</li>
+              <li>Butter</li>
+              <li>Sugar</li>
+              <li>Eggs & vanilla</li>
+            </ul>
+          </div>
+
+          <div>
+            <strong>Method:</strong><br />
+            <ol>
+              <li>Mash bananas.</li>
+              <li>Cream butter and sugar, then mix in eggs and vanilla.</li>
+              <li>Fold in bananas and dry ingredients.</li>
+              <li>Bake until a skewer comes out clean.</li>
+            </ol>
+          </div>
+        </div>
+
+        <p class="pill ghost dialog">
+          <a
+            href="https://houseofnasheats.com/best-banana-bread-recipe/"
+            target="_blank"
+          >
+            View full recipe on House of Nash Eats
+          </a>
+        </p>
+      </dialog>
+
+      <!-- Blondies -->
+      <div class="card" data-dialog="recipe4">
+        <div class="card-content">
+          <h2>Blondies</h2>
+          <img
+            src="https://images.unsplash.com/photo-1682622110395-145cc13d5346?q=80&w=1065&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Blondies"
+          />
+
+          <div class="pills">
+          </div>
+        </div>
+      </div>
+
+      <dialog id="recipe4">
+        <header>
+          <h2>Blondies</h2>
+          <button class="close-btn">Close</button>
+        </header>
+        <div>
+          <div class="ingredients">
+            <strong>Ingredients:</strong><br />
+            <ul>
+              <li>Butter & brown sugar</li>
+              <li>Egg</li>
+              <li>Vanilla</li>
+              <li>Flour & baking powder</li>
+              <li>Optional mix-ins (nuts, chocolate chips)</li>
+            </ul>
+          </div>
+
+          <div>
+            <strong>Method:</strong><br />
+            <ol>
+              <li>Melt butter and mix with sugar.</li>
+              <li>Whisk in egg and vanilla.</li>
+              <li>Stir in flour and baking powder.</li>
+              <li>Add mix-ins, spread into pan, and bake.</li>
+            </ol>
+          </div>
+        </div>
+
+        <p class="pill ghost dialog">
+          <a
+            href="https://smittenkitchen.com/2006/11/blondies/"
+            target="_blank"
+          >
+            View full recipe on Smitten Kitchen
+          </a>
+        </p>
+      </dialog>
 
       <div class="card" data-dialog="recipe1">
         <div class="card-content">
           <h2>Brownies</h2>
+          <img
+            src="https://images.unsplash.com/photo-1664339030103-42227126b6ba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Blondies"
+          />
           <div class="pills"></div>
         </div>
       </div>
 
       <div class="card" data-dialog="recipe1">
         <div class="card-content">
-          <h2>Banana bread – whole cake</h2>
-          <div class="pills"></div>
+          <h2>Banana bread</h2>
+          <div class="pills">
+            <span class="pill">Whole cake</span>
+          </div>
         </div>
       </div>
 
@@ -233,24 +557,12 @@
         </div>
       </div>
     </main>
-
-    <!-- Dialogs -->
-    <dialog id="recipe1">
-      <h2>Chocolate Slice</h2>
-      <p class="ingredients">
-        <strong>Ingredients:</strong><br />
-        - 200g plain biscuits<br />
-        - 125g butter<br />
-        - 1/2 cup cocoa<br />
-        - 1 cup icing sugar
-      </p>
+    <footer>
       <p>
-        <a href="https://example.com/chocolate-slice" target="_blank"
-          >View full recipe</a
-        >
+        Want to see another recipe on this page? Contact
+        <a href="mailto:miamollie@gmail.com">miamollie@gmail.com</a>
       </p>
-      <button class="close-btn">Close</button>
-    </dialog>
+    </footer>
 
     <script>
       document.querySelectorAll(".card").forEach((card) => {
