@@ -1,0 +1,207 @@
+:root {
+  --font-family: system-ui, sans-serif;
+  --color-text: #333;
+  --color-text-muted: #444;
+  --color-bg: #f7faff;
+  --color-bg-header: #eaf4ff;
+  --color-border-header: #b3d4fc;
+  --color-primary: #2a5d9f;
+  --color-pill: #4a90e2;
+  --color-pill-alt: #5dade2;
+  --color-pill-ghost-bg: #fff;
+  --color-pill-ghost-border: #5dade2;
+  --color-btn-bg: #4a90e2;
+  --color-btn-bg-hover: #357ab8;
+  --color-dialog-bg: #fff;
+  --color-dialog-backdrop: rgba(0, 0, 0, 0.4);
+  --color-card-bg: #fff;
+  --color-ingredients-bg: #f0f7ff;
+  --shadow-card: 0 3px 8px rgba(0, 0, 0, 0.1);
+  --shadow-card-hover: 0 6px 14px rgba(0, 0, 0, 0.15);
+  --shadow-dialog: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background: var(--color-bg);
+  color: var(--color-text);
+  display: flex-column;
+  justify-content: space-between;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  background: var(--color-bg-header);
+  border-bottom: 4px solid var(--color-border-header);
+}
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+header p,
+footer p {
+  max-width: 800px;
+  margin: 0 auto 15px auto;
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+}
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.card {
+  background: var(--color-card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.card-content {
+  padding: 1rem;
+  flex-grow: 1;
+}
+.card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+}
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.pill {
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #fff;
+  background: var(--color-pill);
+}
+.pill.alt {
+  background: var(--color-pill-alt);
+}
+.pill.ghost {
+  background: var(--color-pill-ghost-bg);
+  border: 3px solid var(--color-pill-ghost-border);
+}
+.pill.dialog a {
+  display: block;
+  text-align: center;
+}
+dialog {
+  border: none;
+  border-radius: 16px;
+  padding: 1.5rem;
+  max-width: 500px;
+  width: 90%;
+  background: var(--color-dialog-bg);
+  box-shadow: var(--shadow-dialog);
+}
+
+dialog {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  @starting-style {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+dialog[open] {
+  opacity: 1;
+  transform: scale(1);
+}
+dialog::backdrop {
+  background: var(--color-dialog-backdrop);
+}
+dialog img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+dialog header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+dialog h2 {
+  margin-top: 0;
+  color: var(--color-primary);
+}
+.ingredients {
+  margin: 1rem 0;
+  background: var(--color-ingredients-bg);
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+.close-btn {
+  margin-top: 1rem;
+  background: var(--color-btn-bg);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.close-btn:hover {
+  background: var(--color-btn-bg-hover);
+}
+a {
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Filter Bar */
+#filter-bar {
+  text-align: center;
+  padding: 1rem;
+  background: var(--color-bg-light, #eaf4ff);
+  border-bottom: 3px solid var(--color-accent, #b3d4fc);
+}
+
+.filter-btn {
+  background: var(--color-primary, #4a90e2);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  margin: 0.3rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.filter-btn:hover {
+  background: var(--color-primary-hover, #357ab8);
+}
+
+.filter-btn.active {
+  background: var(--color-accent, #5dade2);
+}

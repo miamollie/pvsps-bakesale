@@ -8,6 +8,8 @@ https://smittenkitchen.com/2006/11/blondies/
 
 Lolly bags
 
+https://www.taste.com.au/food-news/best-recipe-ever-3-ingredient-jam-drops-recipe-we-just-discovered/8ndy15dc
+
 Frog in pong
 - https://www.aeroplanejelly.com.au/recipes/original/frog-in-a-pond
 

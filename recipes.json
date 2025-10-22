@@ -1,0 +1,86 @@
+[
+    {
+        "id": "crackles-recipe",
+        "title": "Chocolate Crackles",
+        "image": "https://images.kglobalservices.com/www.kelloggs.com.au/en_au/recipe/recipe_417656/hero_img-6643064_chocolate-crackles-header-2.png",
+        "tags": [
+            "No Bake",
+            "Easy"
+        ],
+        "ingredients": [
+            "4 cups Kellogg’s® Rice Bubbles",
+            "1 cup icing sugar",
+            "1 cup desiccated coconut",
+            "250g Copha®, melted",
+            "3 tbsp cocoa"
+        ],
+        "method": [
+            "Mix all ingredients together.",
+            "Spoon mixture into paper patty cases.",
+            "Refrigerate until firm."
+        ],
+        "link": "https://www.kelloggs.com.au/en_AU/recipes/chocolate-crackles.html",
+        "source": "Kellogg’s"
+    },
+    {
+        "id": "carrot-cake-recipe",
+        "title": "Carrot Cake",
+        "image": "https://butternutbakeryblog.com/wp-content/uploads/2019/04/carrot-cake-layers.jpg",
+        "tags": [
+            "Whole Cake"
+        ],
+        "ingredients": [
+            "260g all-purpose flour",
+            "1 tsp baking soda",
+            "1½ tsp baking powder",
+            "1 tsp salt",
+            "2 tsp cinnamon",
+            "240ml vegetable oil",
+            "200g light brown sugar",
+            "100g granulated sugar",
+            "4 large eggs",
+            "300g finely grated carrots",
+            "100g crushed pineapple (drained)",
+            "Optional: chopped walnuts or pecans"
+        ],
+        "method": [
+            "Preheat oven to 175°C. Grease and line two 8-inch cake pans.",
+            "Whisk flour, baking soda, baking powder, salt, and cinnamon together.",
+            "In another bowl, whisk oil, sugars, and eggs until smooth.",
+            "Fold in grated carrots and pineapple.",
+            "Add dry ingredients and mix until just combined.",
+            "Divide between pans and bake for 30–35 minutes or until a skewer comes out clean.",
+            "Cool completely before frosting with cream cheese icing."
+        ],
+        "link": "https://butternutbakeryblog.com/perfect-carrot-cake/",
+        "source": "Butternut Bakery"
+    },
+    {
+        "id": "vanilla-cupcakes-recipe",
+        "title": "Vanilla Cupcakes",
+        "image": "https://www.lifeloveandsugar.com/wp-content/uploads/2020/05/Vanilla-Cupcakes3E.jpg",
+        "tags": [
+            "Easy"
+        ],
+        "ingredients": [
+            "130g plain flour",
+            "1¼ tsp baking powder",
+            "¼ tsp salt",
+            "115g unsalted butter, softened",
+            "150g sugar",
+            "2 large eggs",
+            "2 tsp vanilla extract",
+            "120ml milk"
+        ],
+        "method": [
+            "Preheat oven to 175°C and line a 12-cup muffin tin with paper liners.",
+            "Whisk flour, baking powder, and salt together.",
+            "Beat butter and sugar until light and fluffy, then add eggs and vanilla.",
+            "Mix in dry ingredients alternately with milk, beginning and ending with dry mix.",
+            "Divide batter evenly among liners and bake for 18–20 minutes, until golden and springy.",
+            "Cool completely before frosting with your favorite buttercream."
+        ],
+        "link": "https://www.lifeloveandsugar.com/easy-homemade-vanilla-cupcakes-recipe/",
+        "source": "Life, Love and Sugar"
+    }
+]
