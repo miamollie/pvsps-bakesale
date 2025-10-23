@@ -21,8 +21,10 @@ async function loadRecipes() {
     // Render cards
     recipes.forEach((recipe) => {
       const card = document.createElement("div");
+      const id =recipe.title.replaceAll(" ", "-")
       card.className = "card";
-      card.dataset.dialog = recipe.id;
+      card.dataset.dialog = id;
+      card.dataset.tags = recipe.tags;
 
       card.innerHTML = `
           <div class="card-content">
@@ -43,7 +45,7 @@ async function loadRecipes() {
 
       // Create dialog for this recipe
       const dialog = document.createElement("dialog");
-      dialog.id = recipe.id;
+      dialog.id = id;
       dialog.innerHTML = `
           <header>
             <h2>${recipe.title}</h2>
@@ -59,8 +61,8 @@ async function loadRecipes() {
             <ol>${recipe.method.map((m) => `<li>${m}</li>`).join("")}</ol>
           </div>
           <p class="pill ghost dialog">
-            <a href="${recipe.link}" target="_blank">
-              View full recipe on ${recipe.source}
+            <a href="${recipe.source}" target="_blank">
+              View full recipe
             </a>
           </p>
         `;
